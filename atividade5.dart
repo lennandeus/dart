@@ -1,4 +1,17 @@
-void main(){}
+void main(){
+  
+  Usuario jp = Usuario("JP", 17, 190272);
+
+  Usuario dieimes = Usuario("Diemes", 34, 011);
+
+dieimes.fazerCadastro();
+
+  jp.fazerCadastro();
+
+
+  Administrador adm = Administrador("Dieimes", 33, 181177);
+  adm.monitorarConta();
+}
 
 class Perfil {
   String nome;
@@ -9,7 +22,22 @@ class Perfil {
 }
 
 class Usuario extends Perfil {
+
+  Usuario (String nome, int idade, int id) :super (nome, idade, id);
+
+
   void fazerCadastro(){
-    print("O usuário $nome  se cadastrou");
+    print("----------------------------------");
+    print("O usuário $nome de $idade anos de ID $id se cadastrou");
+    print("----------------------------------");
+  }
+}
+
+class Administrador extends Perfil{
+  Administrador (String nome, int idade, int id) :super (nome, idade, id);
+  void monitorarConta(){
+    print("----------------------------------");
+    print("O administrador $nome de $idade anos de ID $id monitorou as contas");
+    print("----------------------------------");
   }
 }
